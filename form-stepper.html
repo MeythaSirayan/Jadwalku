@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Jadwal Baru - JadwalKu</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="dashboard.html">
+                <img src="./assets/images/Brand-mark.svg" alt="Logo JadwalKu">
+            </a>
+            <a href="dashboard.html">Kembali ke Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Formulir Tambah Jadwal Akademik</h1>
+        <p>Lengkapi informasi kegiatan Anda di bawah ini secara bertahap.</p>
+
+        <section>
+            <h2>Progres Pengisian</h2>
+            <nav aria-label="Progres Pengisian Form">
+                <ol>
+                    <li><strong>1. Info Kegiatan</strong></li>
+                    <li>2. Waktu & Lokasi</li>
+                    <li>3. Konfirmasi</li>
+                </ol>
+            </nav>
+        </section>
+
+        <section>
+            <h2>Detail Agenda Baru</h2>
+            <form action="success.html" method="post">
+                <fieldset>
+                    <legend>Langkah 1: Informasi Dasar Kegiatan</legend>
+                    
+                    <div>
+                        <label for="kategori">Kategori Kegiatan</label>
+                        <select id="kategori" name="kategori" required>
+                            <option value="" disabled selected>Pilih Kategori Kegiatan</option>
+                            <option value="kuliah">Perkuliahan</option>
+                            <option value="tugas">Tugas & Ujian</option>
+                            <option value="organisasi">Organisasi Kampus</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="nama-kegiatan">Nama Kegiatan / Mata Kuliah</label>
+                        <input type="text" id="nama-kegiatan" name="nama_kegiatan" placeholder="Contoh: Rapat Pleno BEM" required>
+                    </div>
+
+                    <div>
+                        <label for="deskripsi">Catatan / Deskripsi Tambahan</label>
+                        <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="Tuliskan detail atau persiapan kegiatan..."></textarea>
+                    </div>
+
+                    <div>
+                        <a href="dashboard.html">Batal</a>
+                        <button type="submit">Lanjut ke Langkah Berikutnya</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JadwalKu</p>
+    </footer>
+</body>
+</html>

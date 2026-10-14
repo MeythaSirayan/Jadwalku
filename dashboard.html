@@ -2,37 +2,41 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Dashboard Utama - JadwalKu</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="dashboard.html">
+            <a href="dashboard.html" class="brand">
                 <img src="./assets/images/Brand-mark.svg" alt="Logo JadwalKu">
             </a>
-            <div>
-                <form action="#" method="get">
+            <div class="header-center">
+                <form action="#" method="get" class="search-form">
                     <label for="search-agenda" hidden>Cari agenda</label>
                     <input type="search" id="search-agenda" name="q" placeholder="Cari agenda atau mata kuliah...">
                 </form>
-                <a href="#notifikasi">Notifikasi</a>
-                <div>
-                    <span>Alya Nirmala</span>
-                    <small>Teknik Informatika</small>
+                <a href="#notifikasi" class="nav-link">Notifikasi</a>
+                <div class="user-profile">
+                    <div class="avatar">AN</div>
+                    <div class="user-info">
+                        <span>Alya Nirmala</span>
+                        <small>Teknik Informatika</small>
+                    </div>
                 </div>
             </div>
-            <div>
-                <a href="form-stepper.html">+ Tambah Jadwal</a>
+            <div class="header-actions">
+                <a href="#impor" class="btn-secondary">Impor Kalender</a>
+                <a href="form-stepper.html" class="btn-primary">+ Tambah Jadwal</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <h1>Dashboard Akademik JadwalKu</h1>
-        <p>Pusat kendali kalender dan pemantauan agenda perkuliahan Anda.</p>
-
-        <nav aria-label="Menu Navigasi Samping">
-            <h2>Navigasi Menu</h2>
+        <!-- SIDEBAR -->
+        <nav aria-label="Menu Navigasi Samping" class="sidebar">
+            <h2>NAVIGASI MENU</h2>
             <ul>
                 <li><a href="dashboard.html">Ringkasan</a></li>
                 <li><a href="dashboard.html" aria-current="page">Kalender</a></li>
@@ -40,8 +44,8 @@
                 <li><a href="#notifikasi">Notifikasi</a></li>
             </ul>
 
-            <section>
-                <h2>Filter Semester</h2>
+            <section class="sidebar-section">
+                <h2>FILTER SEMESTER</h2>
                 <label for="semester" hidden>Pilih Semester</label>
                 <select id="semester" name="semester">
                     <option value="5" selected>Semester 5</option>
@@ -49,104 +53,155 @@
                 </select>
             </section>
 
-            <section>
-                <h2>Kategori Kegiatan</h2>
-                <ul>
-                    <li>Perkuliahan <span>6</span></li>
-                    <li>Organisasi <span>3</span></li>
-                    <li>Tugas & Ujian <span>4</span></li>
+            <section class="sidebar-section">
+                <h2>KATEGORI</h2>
+                <ul class="category-list">
+                    <li><span class="dot dot-blue"></span> Perkuliahan <span class="badge">6</span></li>
+                    <li><span class="dot dot-navy"></span> Organisasi <span class="badge">3</span></li>
+                    <li><span class="dot dot-green"></span> Tugas & Ujian <span class="badge">4</span></li>
                 </ul>
             </section>
+
+            <div class="sidebar-card">
+                <h3>Deteksi bentrok aktif</h3>
+                <p>JadwalKu memeriksa setiap agenda sebelum disimpan.</p>
+            </div>
         </nav>
 
-        <section>
-            <h2>Jadwal Akademik Anda</h2>
-            <p>Pantau agenda dan jaga setiap komitmen tetap selaras.</p>
+        <!-- KONTEN UTAMA -->
+        <section class="content-area">
+            <div class="page-header">
+                <span class="greeting">SELAMAT PAGI, ALYA</span>
+                <h1>Jadwal akademik Anda</h1>
+                <p>Pantau agenda dan jaga setiap komitmen tetap selaras.</p>
+            </div>
 
-            <div>
-                <article>
-                    <h3>13 Agenda</h3>
-                    <p>Agenda bulan ini (4 minggu ini)</p>
+            <!-- STATISTIK -->
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-header">
+                        <h3>13 Agenda</h3>
+                        <span class="tag">4 minggu ini</span>
+                    </div>
+                    <p>Agenda bulan ini</p>
                 </article>
-                <article>
-                    <h3>4 Tugas</h3>
-                    <p>Tugas mendekat (2 prioritas)</p>
+
+                <article class="stat-card">
+                    <div class="stat-header">
+                        <h3>4 Tugas</h3>
+                        <span class="tag tag-warning">2 prioritas</span>
+                    </div>
+                    <p>Tugas mendekat</p>
                 </article>
-                <article>
-                    <h3>2 Hari</h3>
-                    <p>Jadwal padat (Rab & Jum)</p>
+
+                <article class="stat-card">
+                    <div class="stat-header">
+                        <h3>2 Hari</h3>
+                        <span class="tag tag-orange">Rab & Jum</span>
+                    </div>
+                    <p>Jadwal padat</p>
                 </article>
             </div>
 
-            <section>
-                <div>
-                    <h2>Oktober 2026</h2>
-                    <p>
-                        <a href="#hari-ini">Hari ini</a> | 
-                        <a href="#bulan">Bulan</a>
-                    </p>
+            <!-- KALENDER -->
+            <section class="calendar-card">
+                <div class="calendar-header">
+                    <div class="calendar-nav">
+                        <button class="nav-arrow">&lt;</button>
+                        <h2>Oktober 2026</h2>
+                        <button class="nav-arrow">&gt;</button>
+                    </div>
+                    <div class="calendar-views">
+                        <a href="#hari-ini" class="btn-tab">Hari ini</a>
+                        <a href="#bulan" class="btn-tab active">Bulan</a>
+                    </div>
                 </div>
 
                 <table>
                     <caption>Tabel Kalender Bulanan Oktober 2026</caption>
                     <thead>
                         <tr>
-                            <th scope="col">Senin</th>
-                            <th scope="col">Selasa</th>
-                            <th scope="col">Rabu</th>
-                            <th scope="col">Kamis</th>
-                            <th scope="col">Jumat</th>
-                            <th scope="col">Sabtu</th>
-                            <th scope="col">Minggu</th>
+                            <th scope="col">Sen</th>
+                            <th scope="col">Sel</th>
+                            <th scope="col">Rab</th>
+                            <th scope="col">Kam</th>
+                            <th scope="col">Jum</th>
+                            <th scope="col">Sab</th>
+                            <th scope="col">Min</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <time datetime="2026-10-29">29</time>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-30">30</time>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-01">1</time>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-02">2</time>
-                                <p><strong>Pemrograman Web</strong></p>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-03">3</time>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-04">4</time>
-                                <p><strong>Rapat Organisasi</strong></p>
-                            </td>
-                            <td>
-                                <time datetime="2026-10-05">5</time>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody id="calendar-body"></tbody>
                 </table>
             </section>
         </section>
 
-        <aside>
-            <h2>Agenda Terdekat</h2>
+        <!-- PANEL AGENDA TERDEKAT -->
+        <aside class="agenda-panel">
+            <div class="panel-header">
+                <h2>Agenda terdekat</h2>
+                <span class="agenda-count">3 agenda</span>
+            </div>
             <p>Daftar 3 agenda terdekat minggu ini.</p>
-            <article>
+
+            <article class="agenda-item">
                 <h3>Mata Kuliah Pemrograman Web</h3>
-                <p><time datetime="2026-10-14T08:00">14 OKT • 08.00</time> • Ruang Lab 3.2</p>
+                <p class="agenda-meta"><time datetime="2026-10-14T08:00">14 OKT • 08.00</time></p>
+                <p class="agenda-location">Ruang Lab 3.2</p>
             </article>
-            <article>
+
+            <article class="agenda-item">
                 <h3>Rapat Organisasi BEM</h3>
-                <p><time datetime="2026-10-14T15:30">14 OKT • 15.30</time> • Sekretariat BEM</p>
+                <p class="agenda-meta"><time datetime="2026-10-14T15:30">14 OKT • 15.30</time></p>
+                <p class="agenda-location">Sekretariat BEM</p>
             </article>
+
+            <article class="agenda-item">
+                <h3>Deadline Tugas Akhir</h3>
+                <p class="agenda-meta"><time datetime="2026-10-16T23:59">16 OKT • 23.59</time></p>
+                <p class="agenda-location">Unggah di SIAKAD</p>
+            </article>
+
+            <div class="recommendation-card">
+                <h4>Saran JadwalKu</h4>
+                <p>Kamis pagi masih kosong. Cocok untuk fokus mengerjakan Tugas Akhir.</p>
+            </div>
         </aside>
     </main>
 
     <footer>
         <p>&copy; 2026 JadwalKu • Sistem Pengelola Jadwal Mahasiswa</p>
     </footer>
+
+    <script>
+        const tahun = 2026;
+        const bulan = 9; // Oktober (Januari = 0)
+        const kalender = document.getElementById("calendar-body");
+        
+        const awal = new Date(tahun, bulan, 1);
+        const jumlahHari = new Date(tahun, bulan + 1, 0).getDate();
+        const offset = (awal.getDay() + 6) % 7;
+        
+        let tanggal = 1 - offset;
+        
+        for (let minggu = 0; minggu < 5; minggu++) {
+            const baris = document.createElement("tr");
+        
+            for (let hari = 0; hari < 7; hari++, tanggal++) {
+                const sel = document.createElement("td");
+                const tgl = new Date(tahun, bulan, tanggal);
+        
+                sel.innerHTML = `<time datetime="${tgl.getFullYear()}-${String(tgl.getMonth()+1).padStart(2,"0")}-${String(tgl.getDate()).padStart(2,"0")}">${tgl.getDate()}</time>`;
+        
+                if (tgl.getMonth() !== bulan) {
+                    sel.style.color = "#a0aec0";
+                    sel.style.background = "#f8fafc";
+                }
+        
+                baris.appendChild(sel);
+            }
+        
+            kalender.appendChild(baris);
+        }
+    </script>
 </body>
-</html>
+</html> 

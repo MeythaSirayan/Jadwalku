@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Masuk ke Akun Mahasiswa - JadwalKu</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="./assets/images/Brand-mark.svg" alt="Logo JadwalKu">
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div>
+                <h2>Kuliah lebih teratur, tanpa jadwal bertabrakan.</h2>
+                <p>Susun perkuliahan, rapat organisasi, dan tenggat tugas dalam satu kalender yang otomatis mendeteksi konflik.</p>
+                <ul>
+                    <li>Deteksi konflik sebelum agenda disimpan</li>
+                    <li>Ringkasan beban akademik mingguan</li>
+                    <li>Pengingat tugas dan ujian tepat waktu</li>
+                </ul>
+                <blockquote>
+                    <p>"JadwalKu membantu saya menghindari rapat BEM yang bersamaan dengan kelas praktikum."</p>
+                    <footer>Nadia • Mahasiswa Sistem Informasi</footer>
+                </blockquote>
+            </div>
+
+            <div>
+                <div>
+                    <p>SELAMAT DATANG KEMBALI</p>
+                    <h1>Masuk ke akun mahasiswa</h1>
+                    <p>Gunakan email kampus untuk melanjutkan ke kalender akademik Anda.</p>
+                </div>
+
+                <div role="alert">
+                    <p>Email atau kata sandi belum tepat</p>
+                    <p>Periksa kembali email kampus dan kata sandi, lalu coba lagi.</p>
+                </div>
+
+                <form action="dashboard.html" method="get">
+                    <fieldset>
+                        <legend>Formulir Masuk Akun</legend>
+                        
+                        <div>
+                            <label for="email">Email kampus</label>
+                            <input type="email" id="email" name="email" value="alya.nirmala@mahasiswa.ac.id" required>
+                        </div>
+
+                        <div>
+                            <label for="password">Kata sandi</label>
+                            <input type="password" id="password" name="password" value="********" required>
+                            <p>Kata sandi minimal 8 karakter.</p>
+                        </div>
+
+                        <div>
+                            <label>
+                                <input type="checkbox" name="remember" checked> Ingat saya
+                            </label>
+                            <a href="#lupa-sandi">Lupa kata sandi?</a>
+                        </div>
+
+                        <button type="submit">Masuk ke JadwalKu</button>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
